@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+  IgnorableNamespaces="uap mp uap4 uap3 uap2">
+
+  <Identity
+    Name="4bf2805e-a590-4198-a60a-c5988ddbdfde"
+    Publisher="CN=Anthony"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="4bf2805e-a590-4198-a60a-c5988ddbdfde" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>4-SocketConnection</DisplayName>
+    <PublisherDisplayName>Anthony</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="_4_SocketConnection.App">
+      <uap:VisualElements
+        DisplayName="4-SocketConnection"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="4-SocketConnection"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="internetClientServer"/>
+    <Capability Name="privateNetworkClientServer"/>
+    <uap:Capability Name="videosLibrary"/>
+    <uap4:Capability Name="userDataTasks"/>
+    <uap3:Capability Name="remoteSystem"/>
+    <uap:Capability Name="removableStorage"/>
+    <uap:Capability Name="appointments"/>
+    <uap2:Capability Name="spatialPerception"/>
+    <uap:Capability Name="objects3D"/>
+    <uap:Capability Name="blockedChatMessages"/>
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+    <uap:Capability Name="userAccountInformation"/>
+    <uap2:Capability Name="phoneCallHistoryPublic"/>
+    <DeviceCapability Name="webcam"/>
+    <DeviceCapability Name="proximity"/>
+    <DeviceCapability Name="pointOfService"/>
+    <DeviceCapability Name="microphone"/>
+  </Capabilities>
+</Package>

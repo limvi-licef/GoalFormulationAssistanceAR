@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#end_at -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#end_at"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#start_at -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#start_at"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#suggest -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#suggest"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#when -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#when"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#where -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#where"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todo"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Afternoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Afternoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Evening"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Bedroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Bedroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Cook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Cook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#LateMorning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Kitchen"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#DressUp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#DressUp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#EarlMorning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Hall"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#EarlMorning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#EarlMorning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#LateMorning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Evening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Evening">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Night"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Hall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Hall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Handwach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Handwach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Lunchtime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Kitchen"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Kitchen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#LateMorning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#LateMorning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Lunchtime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Living-room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Living-room">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Lunchtime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Lunchtime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Afternoon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Night -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Night">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Daytime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#nextDaytime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#EarlMorning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <end_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</end_at>
+        <start_at rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</start_at>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Room"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#TakeMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#TakeMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhen"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#EarlMorning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#todoWhere"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/ontologies/2020/6/untitled-ontology-5#Kitchen"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

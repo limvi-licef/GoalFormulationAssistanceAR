@@ -1,0 +1,1 @@
+C:\Users\Anthony\Source\Repos\GoalFormulationAssistanceAR\Hololens\Examples\1.1-FrameReaderCameraEx\1.1-FrameReaderCameraEx.csproj;x86
