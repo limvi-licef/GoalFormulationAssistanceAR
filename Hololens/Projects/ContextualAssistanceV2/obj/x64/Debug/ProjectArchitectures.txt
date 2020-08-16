@@ -1,0 +1,1 @@
+C:\Users\Anthony\Source\Repos\GoalFormulationAssistanceAR\Hololens\Projects\ContextualAssistanceV2\ContextualAssistanceV2.csproj;x64

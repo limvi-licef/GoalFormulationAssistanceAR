@@ -127,6 +127,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{AE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextualAssistance", "Hololens\Projects\ContextualAssistance\ContextualAssistance.csproj", "{C98F5BD4-9138-4C8D-A3C7-52EDA88AB560}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{469E5B5A-A105-4A14-8DE6-4E4C7EE196D6}"
+	ProjectSection(SolutionItems) = preProject
+		PC\Model\frame_extraction.py = PC\Model\frame_extraction.py
+		PC\Model\model_build_and_train.py = PC\Model\model_build_and_train.py
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextualAssistanceV2", "Hololens\Projects\ContextualAssistanceV2\ContextualAssistanceV2.csproj", "{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -403,6 +411,22 @@ Global
 		{C98F5BD4-9138-4C8D-A3C7-52EDA88AB560}.Release|x86.ActiveCfg = Release|x86
 		{C98F5BD4-9138-4C8D-A3C7-52EDA88AB560}.Release|x86.Build.0 = Release|x86
 		{C98F5BD4-9138-4C8D-A3C7-52EDA88AB560}.Release|x86.Deploy.0 = Release|x86
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|ARM.ActiveCfg = Debug|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|ARM64.Build.0 = Debug|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|x64.ActiveCfg = Debug|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|x64.Build.0 = Debug|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|x64.Deploy.0 = Debug|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Debug|x86.ActiveCfg = Debug|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|ARM.ActiveCfg = Release|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|ARM64.ActiveCfg = Release|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|ARM64.Build.0 = Release|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|ARM64.Deploy.0 = Release|ARM64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|x64.ActiveCfg = Release|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|x64.Build.0 = Release|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|x64.Deploy.0 = Release|x64
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -432,6 +456,8 @@ Global
 		{40613E9A-D3C7-4B1D-93B7-E7C269950AF5} = {1626258C-FFFA-46A8-8BCB-A8A0D05A617F}
 		{AE4886A9-4629-4D74-A69A-F461A86A4323} = {F41C2FF5-5E43-4D23-970F-294CAABB7F72}
 		{C98F5BD4-9138-4C8D-A3C7-52EDA88AB560} = {AE4886A9-4629-4D74-A69A-F461A86A4323}
+		{469E5B5A-A105-4A14-8DE6-4E4C7EE196D6} = {1588EB1D-2B4B-4EFF-B4B3-B01A4A425E7C}
+		{67B199B0-827E-4C0D-BE2E-5F8A3E7F3804} = {AE4886A9-4629-4D74-A69A-F461A86A4323}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {48F99013-1F8C-4D88-85BB-3A2EEF04EC38}
