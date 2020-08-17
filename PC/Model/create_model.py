@@ -24,7 +24,9 @@ else:
 
 import json
 import tensorflow as tf
-from lib import create_if_not_exists
+
+from add_lib_to_path import *
+from Lib.lib import create_if_not_exists
 
 
 model = tf.keras.models.Sequential([

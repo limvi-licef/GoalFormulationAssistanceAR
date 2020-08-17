@@ -5,6 +5,7 @@ import numpy as np
 import tkinter as tk
 
 import Tools as tools
+from Lib.lib import calc_hist
 import InputOutput as io
 
 from Context.Indicator import Indicator
@@ -53,11 +54,11 @@ class RoomClassification(Indicator):
 
         Indicator.__init__(self)
         self._model = load_model(model+".h5")
-        self._classes = np.load(model+"_classnames.npy")
+        self._classes = np.load(model+"_classes.npy")
         self._frame_count = frame_count
 
         self._h = 0
-        self._hist = np.zeros((self._frame_count,tools.HIST_BINS*3), dtype=np.float32)
+        self._hist = np.zeros((self._frame_count,3,256), dtype=np.float32)
 
         self.gui.title['text'] = "Room classification"
         self.gui.detected['text'] = "Detected: None"
@@ -72,10 +73,10 @@ class RoomClassification(Indicator):
         
         if self._h < self._frame_count:
 
-            #cam = tools.CameraEmul("Cuisine_Salon-SalleAManger_Entrée_Chambre.mp4")
+            frame = tools.CameraEmul().getFrame()
             frame = io.Camera().getFrame()
 
-            tools.add_hist_hsv(self._hist, self._h, frame)
+            self._hist[self._h,:,:] = calc_hist([frame], bins=256)
             self._h += 1
 
             return self._indicator

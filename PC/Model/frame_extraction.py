@@ -12,23 +12,22 @@
 """
 
 
-import os
 import sys
+
+# Parse cmd line args
+if len(sys.argv) == 3:
+    _, VIDEO, DIR = sys.argv
+else:
+    print(__doc__)
+    sys.exit(0)
+
+
+import os
 import cv2
 import numpy as np
 
-
-def create_if_not_exists(path):
-
-    """
-        Creates a directory for extracted frames.
-    """
-
-    try:
-        os.mkdir(path)
-        return True
-    except:
-        return False
+from add_lib_to_path import *
+from Lib.lib import create_if_not_exists, progress_bar
 
 
 def open_video(filename):
@@ -46,27 +45,6 @@ def open_video(filename):
 
     return vid, prop
 
-
-def progress_bar(bar_value, bar_range):
-
-    """
-        Progress bar displayed in console.
-    """
-
-    n = bar_value * 30 // bar_range
-
-    bar = "[" + "#"*n + " "*(30-n) + f"] {bar_value}/{bar_range}"
-
-    if bar_value == bar_range: print(bar, end='\n')
-    else: print(bar, end='\r')
-
-
-# Parse cmd line args
-if len(sys.argv) == 3:
-    _, VIDEO, DIR = sys.argv
-else:
-    print(__doc__)
-    sys.exit(0)
 
 create_if_not_exists(DIR)
 

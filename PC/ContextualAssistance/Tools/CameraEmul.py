@@ -2,6 +2,7 @@
 
 
 import cv2
+import time
 
 from Tools.Singleton import Singleton
 from GUI import GUI
@@ -29,13 +30,22 @@ class CameraEmul:
 
         self.canvas.create_rectangle(0, 0, 640, 360, fill="black")
         self.canvas.update()
+
+        self._last_call = -1
+        self.tic = int(1 / int(self.video.get(cv2.CAP_PROP_FPS)) * 1000)
         
     
     ########################################################################
     def updateFrame(self):
-        
-        self.readable, self.frame_src = self.video.read()
+
+        if self._last_call == -1: self._last_call = time.time()
+
+        tic = int((time.time() - self._last_call) * 1000)
+        for t in range(max(tic//self.tic, 1)):
+            self.readable, self.frame_src = self.video.read()
         self.frame = self.frame_src[:,:,::-1]
+
+        self._last_call = time.time()
     
 
     ########################################################################
@@ -43,4 +53,7 @@ class CameraEmul:
 
         self.displayed = GUI().display_video(self.canvas, self.frame)
 
-        return self.readable, self.frame
+        if self.readable:
+            return self.frame
+        else:
+            return np.zeros((480,640,3), dtype=np.uint8)

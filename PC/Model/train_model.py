@@ -5,7 +5,7 @@
     Train a model.
 
     How to use:
-        model_build_and_train.py <MODEL> <DATA> <BINS> <EPOCH>
+        train_model.py <MODEL> <DATA> <BINS> <EPOCH>
 
         - MODEL: model directory
         - DATA: directory path to images
@@ -29,7 +29,9 @@ import time
 import json
 import numpy as np
 import tensorflow as tf
-from lib import calc_hist
+
+from add_lib_to_path import *
+from Lib.lib import calc_hist
 
 
 data = tf.keras.preprocessing.image.DirectoryIterator(
@@ -37,7 +39,7 @@ data = tf.keras.preprocessing.image.DirectoryIterator(
     tf.keras.preprocessing.image.ImageDataGenerator(dtype=np.uint8),
     target_size=(640,360),
     class_mode='sparse',
-    batch_size=32,
+    batch_size=100,
     dtype=np.uint8
     )
 
@@ -59,7 +61,7 @@ training_logfile = tf.summary.create_file_writer(basename+"/logs_"+t)
 with training_logfile.as_default():
     for n, (images, labels) in enumerate(data):
     
-        histograms = calc_hist(images, int(BINS))
+        histograms = calc_hist(images, int(BINS), print_trace=True)
 
         training = model.fit(histograms, labels, batch_size=32, epochs=1)
         tf.summary.scalar("loss", training.history['loss'][0], step=n)
@@ -68,4 +70,5 @@ with training_logfile.as_default():
         if n==int(EPOCH): break
 
 model.save(basename+"/model_"+t+".h5")
+np.save(basename+"/classes.npy", os.listdir(DATA))
 

@@ -29,7 +29,7 @@ Build a new model and save it into h5 file.
 
 Train a model.
 
-    model_build_and_train.py <MODEL> <DATA> <BINS> <EPOCH>
+    train_model.py <MODEL> <DATA> <BINS> <EPOCH>
 
 * MODEL: model file.
 * DATA: directory path to images.

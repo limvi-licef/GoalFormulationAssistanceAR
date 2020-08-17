@@ -18,13 +18,13 @@ def main(debug=False):
 
     ONTO_PATH = "Ontology\\GoalOntoV1.owl"
 
-    MODEL = "room_classifier"
+    MODEL = "model"
       
     win = GUI(debug)
     win.update()
 
     cam = io.Camera(host="192.168.1.21", port=9999)
-    #cam = tools.CameraEmul("Cuisine_Salon-SalleAManger_Entrée_Chambre.mp4")
+    #cam = tools.CameraEmul("train_test.mp4")
     
     outputStack = io.OutputStack(host="192.168.1.21", port=9998)
     goalOnto = onto.GoalOnto(ONTO_PATH)
