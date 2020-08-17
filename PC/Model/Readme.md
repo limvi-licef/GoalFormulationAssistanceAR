@@ -35,3 +35,13 @@ Train a model.
 * DATA: directory path to images.
 * BINS: bins per color channel.
 * EPOCH: total number of epoch (1 batch per epoch).
+
+
+## Run model
+
+Run model on a video.
+
+    run_model.py <MODEL> <VIDEO>
+
+* MODEL: model path
+* VIDEO: video path
